@@ -3,7 +3,7 @@
 Repository with documentation, scripts and tools for building all sub projects. No source code in this repository that will end up in any release.
 
 ## Quickstart: 
-
+ 
 ### Prepare environment
 
 * install MySQL Community Server
