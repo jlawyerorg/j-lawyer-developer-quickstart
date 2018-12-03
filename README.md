@@ -24,14 +24,8 @@ This will create an empty j-lawyer.org database with users admin/a and user/u
 ### Deploy the server
 
 * take j-lawyer-server.ear from j-lawyer-org/j-lawyer-server/dist/ and put it in wildfly-9.0.2.Final/standalone/deployments - this will install the server binaries
-* launch the server with 
-Linux / macOS: 
-sh wildfly-9.0.2.Final/bin/standalone.sh -c standalone-full.xml -b 0.0.0.0
-
-windows:
-cd wildfly-9.0.2.Final/bin
-standalone -c standalone-full.xml -b 0.0.0.0
-
+* Linux / macOS: launch the server with: sh wildfly-9.0.2.Final/bin/standalone.sh -c standalone-full.xml -b 0.0.0.0
+* windows: launch the server with: wildfly-9.0.2.Final/bin/standalone -c standalone-full.xml -b 0.0.0.0
 * run 'java -jar j-lawyer-client.jar' in j-lawyer-org/j-lawyer-client/dist to run the client
 
 **Questions: reach out to info (-at-) j-lawyer.org - we will provide support to anyone considering to support the project. Word!** 
