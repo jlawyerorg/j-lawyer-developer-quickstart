@@ -9,7 +9,7 @@ Repository with documentation, scripts and tools for building all sub projects. 
 * install MySQL Community Server
 * install "ant" - either download from the apache.org directly, or - on Linux with apt - type 'sudo apt-get install ant'
 * download and unpack http://www.j-lawyer.org/downloads/j-lawyer-developer-quickstart/wildfly.tar.gz
-* edit "standalone-full.xml" in wildfly-9.0.2.Final/standalone/configuration and update the MySQL root password
+* edit "standalone.xml" in wildfly-14.0.1.Final/standalone/configuration and update the MySQL root password
 
 ### Build the application
 
@@ -23,7 +23,8 @@ This will create an empty j-lawyer.org database with users admin/a and user/u
 
 ### Deploy the server
 
-* take j-lawyer-server.ear from j-lawyer-org/j-lawyer-server/dist/ and put it in wildfly-9.0.2.Final/standalone/deployments - this will install the server binaries
+* take j-lawyer-server.ear from j-lawyer-org/j-lawyer-server/dist/ and put it in wildfly-14.0.1.Final/standalone/deployments - this will install the server binaries
+* launch standalone.sh (or .bat) in wildfly-14.0.1.Final/bin to start Wildfly
 * run 'java -jar j-lawyer-client.jar' in j-lawyer-org/j-lawyer-client/dist to run the client
 
 **Questions: reach out to info (-at-) j-lawyer.org - we will provide support to anyone considering to support the project. Word!** 
