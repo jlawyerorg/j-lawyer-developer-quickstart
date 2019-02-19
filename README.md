@@ -16,6 +16,10 @@ Repository with documentation, scripts and tools for building all sub projects. 
 * Clone repository j-lawyer-org to your local disk
 * run build-fast.sh in repository j-lawyer-org to build the applications, skipping tests
 
+### Running tests
+
+* In contrast to build-fast.sh, build.sh will also run the automated tests.
+
 ### Set up a new development database
 
 * run j-lawyer-org/j-lawyer-server/setup/create_database.sql in a MySQL prompt or frontend
