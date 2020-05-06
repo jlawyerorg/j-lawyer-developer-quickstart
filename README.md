@@ -6,6 +6,7 @@ Repository with documentation, scripts and tools for building all sub projects. 
  
 ### Prepare environment
 
+* install Netbeans IDE - the repositories have project definitions for this IDE, and the j-lawyer.org client is largely built using Netbeans' GUI builder
 * install MySQL Community Server
 * install "ant" - either download from the apache.org directly, or - on Linux with apt - type 'sudo apt-get install ant'
 * download and unpack http://www.j-lawyer.org/downloads/j-lawyer-developer-quickstart/wildfly.tar.gz
