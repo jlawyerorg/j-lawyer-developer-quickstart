@@ -16,7 +16,7 @@ Repository with documentation, scripts and tools for building all sub projects. 
 
 ### Build the application
 
-* Clone repository j-lawyer-org to your local disk
+* Clone repository j-lawyer-org to your local disk. When cloning directly from within Netbeans ("Team" - "Remote" - "Clone"), Netbeans will automatically scan for projects and open them.
 * run build-fast.sh in repository j-lawyer-org to build the applications, skipping tests
 
 ### Running tests
@@ -33,7 +33,7 @@ This will create an empty j-lawyer.org database with users admin/a and user/u
 * once the build ran successfully, take j-lawyer-server.ear from j-lawyer-org/j-lawyer-server/dist/ and put it in wildfly-16.0.0.Final/standalone/deployments - this will install the server binaries
 * Linux / macOS: launch the server with: sh wildfly-16.0.0.Final/bin/standalone.sh -c standalone.xml -b 0.0.0.0 (or start it from within the IDE, in the "Services" tab under "Servers")
 * Windows: launch the server with: wildfly-16.0.0.Final/bin/standalone -c standalone.xml -b 0.0.0.0 (or start it from within the IDE, in the "Services" tab under "Servers")
-* run 'java -jar j-lawyer-client.jar' in j-lawyer-org/j-lawyer-client/dist to run the client (or start it from within the IDE, in the "Services" tab under "Servers")
+* run 'java -jar j-lawyer-client.jar' in j-lawyer-org/j-lawyer-client/dist to run the client (or start it from within the IDE, by right-clicking "j-lawyer-client" projekt and choosing "Run")
 
 **Questions: reach out to info (-at-) j-lawyer.org - we will provide support to anyone considering to support the project. Word!** 
 
