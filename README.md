@@ -6,15 +6,15 @@ Repository with documentation, scripts and tools for building all sub projects. 
  
 ### Prepare environment
 
-* install Java 17 JDK (suggest to use Liberica JDK 17: https://bell-sw.com/pages/downloads/#/java-17-lts)
-* install Netbeans IDE (https://netbeans.apache.org/) - the repositories have project definitions for this IDE, and the j-lawyer.org client is largely built using Netbeans' GUI builder
-* install MariaDB
-* Linux: install "ant" - either download from the apache.org directly, or - on Linux with apt - type 'sudo apt-get install ant'
 * Windows: download required tools from http://www.j-lawyer.org/downloads/j-lawyer-developer-quickstart/tools.zip and extract it
-* download and unpack http://www.j-lawyer.org/downloads/j-lawyer-developer-quickstart/wildfly.tar.gz
+* Linux: install Java 17 JDK (suggest to use Liberica JDK 17: https://bell-sw.com/pages/downloads/#/java-17-lts)
+* Linux/Windows: install Netbeans IDE (https://netbeans.apache.org/) - the repositories have project definitions for this IDE, and the j-lawyer.org client is largely built using Netbeans' GUI builder. Windows: launch the installer in a command prompt and specify the JDK location from the tools you downloaded - e.g. Apache-Netbeans-22-bin-windows-x64.exe --javahome C:\dev\tools\jdk-17.0.11-full
+* install MariaDB (Windows: https://mariadb.org/download/?t=mariadb&p=mariadb&r=10.6.18&os=windows&cpu=x86_64&pkg=msi&mirror=agdsn, Linux: through package management)
+* Linux: install "ant" - either download from the apache.org directly, or - on Linux with apt - type 'sudo apt-get install ant'
+* Linux/Windows: download and unpack http://www.j-lawyer.org/downloads/j-lawyer-developer-quickstart/wildfly.tar.gz
 * edit "standalone.xml" in wildfly-26.1.3.Final/standalone/configuration and update the MySQL root password (search for jlawyerdbpwd in the file)
 * edit "standalone.xml" in wildfly-26.1.3.Final/standalone/configuration and set data directories (search for "jlawyer.server.basedirectory" and "jlawyer.server.initdir" in the file)
-* in Netbeans, configure Wildfly server so you can start / stop / debug it from within Netbeans (http://www.mastertheboss.com/eclipse/jboss-netbeans/configuring-netbeans-with-wildfly/)
+* in Netbeans, configure Wildfly server so you can start / stop / debug it from within Netbeans (http://www.mastertheboss.com/eclipse/jboss-netbeans/configuring-netbeans-with-wildfly/). Use "standalone.xml" as server configuration, not "standalone-full.xml".
 
 ### Build the application
 
@@ -28,7 +28,15 @@ Repository with documentation, scripts and tools for building all sub projects. 
 
 ### Set up a new development database
 
-* run j-lawyer-org/j-lawyer-server/setup/create_database.sql in a MySQL prompt or frontend
+Run j-lawyer-org/j-lawyer-server/setup/create_database.sql in a MySQL prompt or frontend. MariaDB on Windows ships with HeidiSQL as a frontend, or connect to the database using
+
+    mysql -u root -p
+
+then then issue the command
+
+    source C:/dev/j-lawyer-org/j-lawyer-server/setup/create_database.sql;
+
+(use forward slashes)
 This will create an empty j-lawyer.org database with users admin/a and user/u
 
 ### Deploy the server
