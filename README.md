@@ -14,12 +14,25 @@ Repository with documentation, scripts and tools for building all sub projects. 
 * Linux/Windows: download and unpack http://www.j-lawyer.org/downloads/j-lawyer-developer-quickstart/wildfly.tar.gz
 * edit "standalone.xml" in wildfly-26.1.3.Final/standalone/configuration and update the MySQL root password (search for jlawyerdbpwd in the file)
 * edit "standalone.xml" in wildfly-26.1.3.Final/standalone/configuration and set data directories (search for "jlawyer.server.basedirectory" and "jlawyer.server.initdir" in the file)
-* in Netbeans, configure Wildfly server so you can start / stop / debug it from within Netbeans (http://www.mastertheboss.com/eclipse/jboss-netbeans/configuring-netbeans-with-wildfly/). Use "standalone.xml" as server configuration, not "standalone-full.xml".
+* in Netbeans, configure Wildfly server so you can start / stop / debug it from within Netbeans (http://www.mastertheboss.com/eclipse/jboss-netbeans/configuring-netbeans-with-wildfly/). Use "standalone.xml" as server configuration, not "standalone-full.xml". 
 
 ### Build the application
 
 * Clone repository j-lawyer-org to your local disk. When on Windows, the top most folder "j-lawyer-org" should reside next to the "tools" folder you downloaded and extracted. When cloning directly from within Netbeans ("Team" - "Remote" - "Clone"), Netbeans will automatically scan for projects and open them.
-* Linux: run build-fast.sh in repository j-lawyer-org to build the applications, skipping tests
+* Linux: run build-fast.sh in repository j-lawyer-org to build the applications, skipping tests (first take care of the jdk paths in the script, if necessary; same for deploy.sh)
+* Example for using mariaDB on Linux: 
+- install MariaDB server and client, e.g. with 'sudo apt-get install mariadb-server mariadb-client'
+- start the server with 'sudo systemctl start mariadb'
+- run 'mysql_secure_installation' to set the root password and secure the installation 
+    (Enter current password for root (enter for none): Enter
+    Switch to unix_socket authentication [Y/n]: n
+    Set root password? [Y/n]: Y
+    New password: yourPassword (as in standalone.xml)
+    Re-enter new password: yourPassword (as in standalone.xml)
+    Remove anonymous users? [Y/n]: Y
+    Disallow root login remotely? [Y/n]: Y
+    Remove test database and access to it? [Y/n]: Y
+    Reload privilege tables now? [Y/n]: Y)"
 * Windows: run build-windows.sh in Git Bash, followed by deploy-windows.sh (both located in folder "j-lawyer-org")
 
 ### Running tests
@@ -32,7 +45,7 @@ Run j-lawyer-org/j-lawyer-server/setup/create_database.sql in a MySQL prompt or 
 
     mysql -u root -p
 
-then then issue the command
+then then issue the command (replace path to your script):
 
     source C:/dev/j-lawyer-org/j-lawyer-server/setup/create_database.sql;
 
